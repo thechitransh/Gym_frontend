@@ -98,7 +98,7 @@ function Login() {
                 className=" outline-none border-b-2 rounded-md px-2"
               />
               <div
-                className=" absolute right-1 top-1 hover:cursor-pointer"
+                className=" absolute right-1 top-0 hover:cursor-pointer"
                 onClick={eyeClick}
               >
                 {Eye ? (

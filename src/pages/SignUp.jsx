@@ -75,7 +75,7 @@ function SignUp() {
                     onChange={(e) => setConfirmSignup(e.target.value)}
                   />
                   <div
-                    className=" absolute right-1 top-1 hover:cursor-pointer"
+                    className=" absolute right-1 top-0 hover:cursor-pointer"
                     onClick={eyeClick}
                   >
                     {Eye ? (
