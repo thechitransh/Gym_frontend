@@ -15,16 +15,15 @@ function Nav() {
             />
           </div>
           <ul className="flex gap-9 font-semibold text-white">
-            <li className=" cursor-pointer hover:text-[#37f713]">
-              <NavLink
+            <NavLink to="/" className=" cursor-pointer hover:text-[#37f713]">
+              <p
                 className={({ isActive }) =>
                   isActive ? "text-[#37f713]" : " "
                 }
-                to="/"
               >
                 Home
-              </NavLink>
-            </li>
+              </p>
+            </NavLink>
             <li className=" cursor-pointer hover:text-[#c4306b]">Fitness</li>
             <li className=" cursor-pointer hover:text-[#c4306b]">
               Gyms Near Me
@@ -33,9 +32,11 @@ function Nav() {
             <li className=" cursor-pointer hover:text-[#c4306b]">About</li>
           </ul>
           <div>
-            <button className="border-2 px-6 text-black py-1 rounded-lg bg-[#37f713] transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#37f713] hover:text-black">
-              <Link to="login">Login</Link>
-            </button>
+            <NavLink to="login">
+              <button className="border-2 px-6 text-black py-1 rounded-lg bg-[#37f713] transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#37f713] hover:text-black">
+                <p to="login">Login</p>
+              </button>
+            </NavLink>
           </div>
         </section>
       </nav>
