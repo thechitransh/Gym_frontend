@@ -4,7 +4,7 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
-
+let message = "no message";
 function Login() {
   const [Usename, setUsename] = useState("");
   const [Password, setPassword] = useState("");
@@ -50,21 +50,35 @@ function Login() {
           password: Password,
         })
         .then((res) => {
-          console.log(res);
+          message = res.data;
+          toast.success("Login Sucessfull 🫡", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+          setPassword("");
+          setUsename("");
+        })
+        .catch((error) => {
+          message = error.response.data;
+          toast.error("Invalid username or password!", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
         });
-      setPassword("");
-      setUsename("");
-      toast.success("Login Sucessfull 🫡", {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
     }
   };
   const eyeClick = () => {

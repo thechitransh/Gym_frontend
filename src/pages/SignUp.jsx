@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Bounce, toast } from "react-toastify";
 
 function SignUp() {
   const [Name, setName] = useState("");
@@ -27,10 +28,49 @@ function SignUp() {
           name: Name,
         })
         .then((res) => {
-          console.log(res);
+          toast.success("SignUp Sucessfull !", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+          setConfirmSignup("");
+          setGymName("");
+          setName("");
+          setNumber("");
+          setPasswordSignup("");
+          setUsenameSignup("");
+        })
+        .catch((error) => {
+          toast.error("Username already exists !", {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
         });
     } else {
-      console.log("Password is not match");
+      toast.error("Password does not match !", {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
   };
   return (
