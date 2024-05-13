@@ -4,7 +4,6 @@ import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
-let message = "no message";
 function Login() {
   const [Usename, setUsename] = useState("");
   const [Password, setPassword] = useState("");
@@ -49,8 +48,7 @@ function Login() {
           username: Usename,
           password: Password,
         })
-        .then((res) => {
-          message = res.data;
+        .then(() => {
           toast.success("Login Sucessfull 🫡", {
             position: "bottom-right",
             autoClose: 2000,
@@ -66,7 +64,7 @@ function Login() {
           setUsename("");
         })
         .catch((error) => {
-          message = error.response.data;
+          console.log(error);
           toast.error("Invalid username or password!", {
             position: "bottom-right",
             autoClose: 2000,
