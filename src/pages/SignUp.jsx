@@ -27,7 +27,7 @@ function SignUp() {
           mobileNumber: Number,
           name: Name,
         })
-        .then((res) => {
+        .then(() => {
           toast.success("SignUp Sucessfull !", {
             position: "bottom-right",
             autoClose: 2000,
@@ -47,7 +47,7 @@ function SignUp() {
           setUsenameSignup("");
         })
         .catch((error) => {
-          toast.error("Username already exists !", {
+          toast.error(error.message, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -57,6 +57,13 @@ function SignUp() {
             progress: undefined,
             theme: "light",
             transition: Bounce,
+          });
+          console.log({
+            gymName: GymName,
+            username: UsenameSignup,
+            password: PasswordSignup,
+            mobileNumber: Number,
+            name: Name,
           });
         });
     } else {
