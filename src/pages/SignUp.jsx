@@ -46,8 +46,8 @@ function SignUp() {
           setPasswordSignup("");
           setUsenameSignup("");
         })
-        .catch(() => {
-          toast.error("Username already exists !", {
+        .catch((error) => {
+          toast.error(error.message, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,

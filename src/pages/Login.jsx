@@ -64,8 +64,7 @@ function Login() {
           setUsename("");
         })
         .catch((error) => {
-          console.log(error);
-          toast.error("Invalid username or password!", {
+          toast.error(error.message, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
