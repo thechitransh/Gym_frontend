@@ -64,7 +64,8 @@ function Login() {
           setUsename("");
         })
         .catch((error) => {
-          toast.error(error.message, {
+          console.log(error);
+          toast.error(error.response.data, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
