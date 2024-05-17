@@ -47,7 +47,7 @@ function SignUp() {
           setUsenameSignup("");
         })
         .catch((error) => {
-          toast.error(error.message, {
+          toast.error(error.response.data, {
             position: "bottom-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -57,13 +57,6 @@ function SignUp() {
             progress: undefined,
             theme: "light",
             transition: Bounce,
-          });
-          console.log({
-            gymName: GymName,
-            username: UsenameSignup,
-            password: PasswordSignup,
-            mobileNumber: Number,
-            name: Name,
           });
         });
     } else {

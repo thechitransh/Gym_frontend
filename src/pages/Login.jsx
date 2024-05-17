@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
+import { Store } from "../context/Store";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
@@ -8,6 +9,7 @@ function Login() {
   const [Usename, setUsename] = useState("");
   const [Password, setPassword] = useState("");
   const [Eye, setEye] = useState(true);
+  const { setNav } = useContext(Store);
 
   const HandleUsername = (e) => {
     setUsename(e.target.value);
@@ -62,9 +64,9 @@ function Login() {
           });
           setPassword("");
           setUsename("");
+          setNav(false);
         })
         .catch((error) => {
-          console.log(error);
           toast.error(error.response.data, {
             position: "bottom-right",
             autoClose: 2000,
