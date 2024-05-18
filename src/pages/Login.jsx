@@ -94,7 +94,7 @@ function Login() {
           <p className="text-center p-2 font-semibold text-lg text-white">
             Login
           </p>
-          <form className="flex flex-col gap-5" onSubmit={HandleSubmit}>
+          <form className="flex flex-col gap-4" onSubmit={HandleSubmit}>
             <input
               type="text"
               placeholder="Usrname"
@@ -122,7 +122,7 @@ function Login() {
                 )}
               </div>
             </div>
-            <button className="bg-[#37f713] text-white rounded-lg py-0.5 mt-4">
+            <button className="bg-[#37f713] text-white rounded-lg py-0.5 mt-2">
               login
             </button>
             <p className="text-sm text-center text-white">
