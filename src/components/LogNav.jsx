@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Store } from "../context/Store";
 
 function LogNav() {
+  const { setNav } = useContext(Store);
+  const logout = () => {
+    setNav(true);
+  };
   return (
     <section className="flex justify-center shadow-md shadow-[#35f71389] py-2 w-full bg-gradient-to-r from-black to-gray-600">
       <nav className="w-[90%] ">
@@ -29,9 +34,14 @@ function LogNav() {
             </li>
           </ul>
           <div>
-            <NavLink to="login">
-              <button className="border-2 px-6 text-black py-1 rounded-lg bg-[#37f713] transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#37f713] hover:text-black">
-                <p to="login">Logout</p>
+            <NavLink to="/">
+              <button
+                className="border-2 px-6 text-black py-1 rounded-lg bg-[#37f713] transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#37f713] hover:text-black"
+                onClick={logout}
+              >
+                <p on to="login">
+                  Logout
+                </p>
               </button>
             </NavLink>
           </div>

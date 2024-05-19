@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Store } from "../context/Store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
 function Login() {
+  const navigate = useNavigate();
   const [Usename, setUsename] = useState("");
   const [Password, setPassword] = useState("");
   const [Eye, setEye] = useState(true);
@@ -65,6 +66,7 @@ function Login() {
           setPassword("");
           setUsename("");
           setNav(false);
+          navigate("/registration");
         })
         .catch((error) => {
           toast.error(error.response.data, {
@@ -94,7 +96,7 @@ function Login() {
           <p className="text-center p-2 font-semibold text-lg text-white">
             Login
           </p>
-          <form className="flex flex-col gap-5" onSubmit={HandleSubmit}>
+          <form className="flex flex-col gap-4" onSubmit={HandleSubmit}>
             <input
               type="text"
               placeholder="Usrname"
@@ -122,7 +124,7 @@ function Login() {
                 )}
               </div>
             </div>
-            <button className="bg-[#37f713] text-white rounded-lg py-0.5 mt-4">
+            <button className="bg-[#37f713] text-white rounded-lg py-0.5 mt-2">
               login
             </button>
             <p className="text-sm text-center text-white">

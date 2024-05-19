@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { Store } from "../context/Store";
 
 function Routers() {
-  const { setNav } = useContext(Store);
   return (
     <>
       <Routes>

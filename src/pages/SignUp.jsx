@@ -81,7 +81,7 @@ function SignUp() {
             <p className="text-center p-2 font-semibold text-lg text-white">
               Sign up
             </p>
-            <form className="flex flex-col gap-5" onSubmit={HandleSubmit}>
+            <form className="flex flex-col gap-4" onSubmit={HandleSubmit}>
               <div className="flex gap-5">
                 <input
                   type="text"
@@ -143,7 +143,7 @@ function SignUp() {
                 />
               </div>
               <button
-                className="bg-[#37f713] text-white rounded-lg py-0.5 mt-4 w-36 self-center"
+                className="bg-[#37f713] text-white rounded-lg py-0.5 mt-2 w-36 self-center"
                 onClick={eyeClick}
               >
                 Sign up
