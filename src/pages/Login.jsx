@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { Store } from "../context/Store";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Bounce, toast } from "react-toastify";
 function Login() {
+  const navigate = useNavigate();
   const [Usename, setUsename] = useState("");
   const [Password, setPassword] = useState("");
   const [Eye, setEye] = useState(true);
@@ -65,6 +66,7 @@ function Login() {
           setPassword("");
           setUsename("");
           setNav(false);
+          navigate("/registration");
         })
         .catch((error) => {
           toast.error(error.response.data, {
