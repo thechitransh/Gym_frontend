@@ -1,16 +1,10 @@
 import React from "react";
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { Store } from "../context/Store";
 
 function Nav() {
-  const { Nav } = useContext(Store);
-
   return (
     <section
-      className={`flex justify-center shadow-md ${
-        Nav ? "flex" : "hidden"
-      }  shadow-[#35f71389] py-2 fixed w-full bg-gradient-to-r from-black to-gray-600`}
+      className={`flex justify-center shadow-md shadow-[#35f71389] py-2 fixed w-full bg-gradient-to-r from-black to-gray-600`}
     >
       <nav className="w-[90%] ">
         <section className="flex justify-between py-4 items-center">
