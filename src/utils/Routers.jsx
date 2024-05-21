@@ -13,7 +13,7 @@ function Routers() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/dashbord" element={<Dashbord />} />
+        <Route path="/dashbord" element={<Dashboard />} />
       </Routes>
     </>
   );

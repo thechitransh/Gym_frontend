@@ -20,12 +20,12 @@ function LogNav() {
           </div>
           <ul className="flex gap-9 font-semibold text-white">
             <NavLink
-              to="/dashbord"
+              to="/dashboard"
               className={({ isActive }) =>
                 isActive ? "text-[#35f71389] underline" : ""
               }
             >
-              <p>Dashbord</p>
+              <p>Dashboard</p>
             </NavLink>
             <li className=" cursor-pointer hover:text-[#c4306b]">Members</li>
 
