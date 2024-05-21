@@ -1,10 +1,8 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import LogNav from "./LogNav";
 function AddNewMamber() {
   return (
     <div className="pb-6 bg-black">
-      <LogNav />
       <section className="flex flex-col items-center gap-4 w-full py-6 text-white">
         <p className="text-xl font-semibol underline">New Member</p>
         <form className="flex flex-col w-1/3 gap-6 ">

@@ -8,7 +8,7 @@ function LogNav() {
     setNav(true);
   };
   return (
-    <section className="flex justify-center shadow-md shadow-[#35f71389] py-2 w-full bg-gradient-to-r from-black to-gray-600">
+    <section className="flex justify-center border-[#35f71389] shadow-md py-2 w-full bg-gradient-to-r from-black to-gray-600">
       <nav className="w-[90%] ">
         <section className="flex justify-between py-4 items-center">
           <div>
@@ -19,19 +19,24 @@ function LogNav() {
             />
           </div>
           <ul className="flex gap-9 font-semibold text-white">
-            <NavLink to="/" className=" cursor-pointer hover:text-[#37f713]">
-              <p
-                className={({ isActive }) =>
-                  isActive ? "text-[#37f713]" : " "
-                }
-              >
-                Dashbord
-              </p>
+            <NavLink
+              to="/dashbord"
+              className={({ isActive }) =>
+                isActive ? "text-[#35f71389] underline" : ""
+              }
+            >
+              <p>Dashbord</p>
             </NavLink>
             <li className=" cursor-pointer hover:text-[#c4306b]">Members</li>
-            <li className=" cursor-pointer hover:text-[#c4306b]">
-              Add New Members
-            </li>
+
+            <NavLink
+              to="/registration"
+              className={({ isActive }) =>
+                isActive ? "text-[#35f71389] underline" : ""
+              }
+            >
+              <li className=" cursor-pointer">Add New Members</li>
+            </NavLink>
           </ul>
           <div>
             <NavLink to="/">
@@ -39,9 +44,7 @@ function LogNav() {
                 className="border-2 px-6 text-black py-1 rounded-lg bg-[#37f713] transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#37f713] hover:text-black"
                 onClick={logout}
               >
-                <p on to="login">
-                  Logout
-                </p>
+                Logout
               </button>
             </NavLink>
           </div>
