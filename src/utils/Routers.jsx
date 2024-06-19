@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import Registration from "../pages/Registration";
-import Dashbord from "../pages/Dashbord";
+import Dashboard from "../pages/Dashbord";
 
 function Routers() {
   return (
@@ -13,7 +13,7 @@ function Routers() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/dashbord" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   );
