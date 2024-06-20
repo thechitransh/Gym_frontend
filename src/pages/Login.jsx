@@ -66,7 +66,7 @@ function Login() {
           setPassword("");
           setUsename("");
           setNav(false);
-          navigate("/registration");
+          navigate("/");
         })
         .catch((error) => {
           toast.error(error.response.data, {
