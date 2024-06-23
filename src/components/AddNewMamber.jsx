@@ -17,7 +17,7 @@ function AddNewMember() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8080/api/members", {
+    axios.post("http://localhost:8080/registration", {
       firstName,
       lastName,
       gender,
@@ -30,20 +30,6 @@ function AddNewMember() {
       feeStatus,
       batch,
     });
-    // const newMemberData = {
-    //   firstName,
-    //   lastName,
-    //   gender,
-    //   mobileNumber,
-    //   email,
-    //   medicalHistory,
-    //   registrationDate,
-    //   subscriptionType,
-    //   amount,
-    //   feeStatus,
-    //   batch,
-    // };
-    // console.log(newMemberData);
     setFirstName("");
     setLastName("");
     setGender("");
