@@ -96,7 +96,11 @@ function Login() {
           <p className="text-center p-2 font-semibold text-lg text-white">
             Login
           </p>
-          <form className="flex flex-col gap-4" onSubmit={HandleSubmit}>
+          <form
+            className="flex flex-col gap-4"
+            action="userLogin"
+            onSubmit={HandleSubmit}
+          >
             <input
               type="text"
               placeholder="Usrname"
